@@ -39,6 +39,11 @@ jobs:
         run: |
           cd toolchain-mipsel
           sh dl_toolchain.sh
+      - name: Set Golang
+        run: |
+          cd /opt/hostedtoolcache/go
+          rm -rf /opt/hostedtoolcache/go/1.14.13
+          mv 1.15.6 1.14.13
       - name: Start build
         run: |
           cd trunk
